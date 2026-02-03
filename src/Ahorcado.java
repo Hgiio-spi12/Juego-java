@@ -47,23 +47,28 @@ public class Ahorcado {
                 }
         }
 
-            if (letraCorrecta && intentoMaxim <= 0) {intentoMaxim--;
+            if (letraCorrecta) {intentoMaxim--;
                                System.out.println("vas bien! te quedan " + (intentoMaxim-intentos));
             }else{
                 intentoMaxim--;
                 System.out.println("letra incorrecta, tienes: " + (intentoMaxim-intentos));
             }
-        }
+       
 
 
-            if (String.valueOf(letraAdivinadas).equals(palabraSecreta)) {
+            if(String.valueOf(letraAdivinadas).equals(palabraSecreta)) {
                 palabraCorrecta = true;
                 System.out.println("¡Felicidades, has adivinado la palabra: !" + palabraSecreta);
-            }else{
+            };
+            }
+            
+            if (!palabraCorrecta){
                 System.out.println("Te quedaste sin intentos, la palabra era: p");
 
             };
-
+ 
+ 
+        
            
 
     
