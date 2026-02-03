@@ -8,7 +8,7 @@ public class Ahorcado {
 
 
         String palabraSecreta = "sorpresa";
-        int intentoMaxim = 6;
+        int intentoMaxim = 10;
         int intentos = 0;
         boolean palabraCorrecta = false;
 
@@ -23,11 +23,15 @@ public class Ahorcado {
             System.out.println(letraAdivinadas[i]);
         }
 
+        System.out.println("tienes 10 intentos");
+
         while (!palabraCorrecta && intentos <  intentoMaxim) {
 
+            
             System.out.println("PALABRA A ADIVINAR: " + String.valueOf(letraAdivinadas));
 
             System.out.println("introduce una letra por favor: ");
+            
 
             char letra = Character.toLowerCase(scanner.next().charAt(0));
             
@@ -43,35 +47,33 @@ public class Ahorcado {
                 }
         }
 
-            if (letraCorrecta) {
+            if (letraCorrecta && intentoMaxim <= 0) {intentoMaxim--;
+                               System.out.println("vas bien! te quedan " + (intentoMaxim-intentos));
+            }else{
                 intentoMaxim--;
-                System.out.println("vas bien! te quedan " + (intentoMaxim-intentos));
+                System.out.println("letra incorrecta, tienes: " + (intentoMaxim-intentos));
             }
+        }
 
-           
 
             if (String.valueOf(letraAdivinadas).equals(palabraSecreta)) {
                 palabraCorrecta = true;
                 System.out.println("¡Felicidades, has adivinado la palabra: !" + palabraSecreta);
+            }else{
+                System.out.println("Te quedaste sin intentos, la palabra era: p");
 
-                
-            }
-            
-            if (!palabraCorrecta) {
-                intentoMaxim--;
-                System.out.println("¡Que pena, no adivinaste! te quedan : " + (intentoMaxim-intentos));
+            };
 
-                
-            }
+           
 
     
-        }
+        
 
 
 
  
 
         scanner.close();
-    } 
-}
+    } }
+
 
